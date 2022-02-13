@@ -45,6 +45,7 @@ const activateFillingBlack = (array) => {
     array.forEach((box) => {
         box.addEventListener('mouseover', () => {
             box.classList.add('filled');
+            box.style['background-color'] = '';
         });
     });
 }
@@ -77,10 +78,8 @@ const randomColor = () => {
 }
 
 const init = () => {
-    let value = getSliderValue();     
-    
     removeAllNodes();
-    changeGrid(value);
+    changeGrid();
     etchBoxes = Array.from(etchActual.children);
     activateFillingBlack(etchBoxes);    
 }
